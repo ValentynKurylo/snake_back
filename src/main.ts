@@ -11,7 +11,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup("/api/snake", app, document)
 
-  await app.listen(5000, ()=>{
-    console.log("Server started on port 5000 ")});
+  await app.listen(process.env.PORT || 5000, ()=>{
+    console.log("Server started on port ", process.env.PORT)});
 }
 bootstrap();
